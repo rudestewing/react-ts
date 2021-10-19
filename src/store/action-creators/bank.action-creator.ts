@@ -1,9 +1,9 @@
 import { Dispatch } from 'redux'
-import { ActionType } from '../../enums'
-import { IAction } from '../reducers/bank.reducer'
+import ActionType from '../action-type'
+import { IActionBank } from '../../interfaces'
 
 export const deposit = (value: number) => {
-  return (dispatch: Dispatch<IAction>) => {
+  return (dispatch: Dispatch<IActionBank>) => {
     return dispatch({
       type: ActionType.BANK_DEPOSIT,
       payload: value,
@@ -12,7 +12,7 @@ export const deposit = (value: number) => {
 }
 
 export const withdraw = (value: number) => {
-  return (dispatch: Dispatch<IAction>) => {
+  return (dispatch: Dispatch<IActionBank>) => {
     return dispatch({
       type: ActionType.BANK_WITHDRAW,
       payload: value,
@@ -21,7 +21,7 @@ export const withdraw = (value: number) => {
 }
 
 export const bankrupt = () => {
-  return (dispatch: Dispatch<IAction>) => {
+  return (dispatch: Dispatch<IActionBank>) => {
     return dispatch({
       type: ActionType.BANK_BANKRUPT,
     })

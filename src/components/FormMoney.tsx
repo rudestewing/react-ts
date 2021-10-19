@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { AppDispatch, RootState } from '../store'
-import { deposit, withdraw } from '../store/action-creators/bank.action-creator'
+import { deposit, withdraw } from '../store/action-creators'
 
 const FormMoney: React.FC = () => {
   const { bank } = useSelector((state: RootState) => ({

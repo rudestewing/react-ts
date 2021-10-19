@@ -8,7 +8,7 @@ const Balance: React.FC = () => {
   }))
 
   return (
-    <div>
+    <div className="flex items-center">
       <span className="mr-2 font-semibold">Balance:</span>
       <span className="font-bold text-lg leading-5">{bank.balance}</span>
     </div>

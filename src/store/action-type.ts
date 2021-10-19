@@ -1,7 +1,10 @@
-export enum ActionType {
+enum ActionType {
   BANK_DEPOSIT = 'BANK_DEPOSIT',
   BANK_WITHDRAW = 'BANK_WITHDRAW',
   BANK_BANKRUPT = 'BANKRUPT',
+
   AUTH_LOGIN = 'AUTH_LOGIN',
   AUTH_LOGOUT = 'AUTH_LOGOUT',
 }
+
+export default ActionType

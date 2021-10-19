@@ -7,6 +7,7 @@ const ListTransaction: React.FC = () => {
   const { bank } = useSelector((state: RootState) => ({
     bank: state.bank,
   }))
+
   return (
     <div className="p-2 border border-gray-300 rounded-md">
       <ul className="overflow-y-scroll " style={{ height: '300px' }}>
