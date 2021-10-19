@@ -1,18 +1,5 @@
-import { ActionType, ITransaction } from '../../types'
-
-type IAction =
-  | {
-      type: ActionType.BANK_DEPOSIT
-      payload: number
-    }
-  | {
-      type: ActionType.BANK_WITHDRAW
-      payload: number
-    }
-  | {
-      type: ActionType.BANK_BANKRUPT
-      payload?: any
-    }
+import { IActionBank, ITransaction } from '../../interfaces'
+import ActionType from '../action-type'
 
 type IState = {
   balance: number
@@ -24,17 +11,17 @@ const initialState: IState = {
   transactions: [],
 }
 
-const bankReducer = (state: IState = initialState, { type, payload }: IAction) => {
-  switch (type) {
+const bankReducer = (state: IState = initialState, action: IActionBank) => {
+  switch (action.type) {
     case ActionType.BANK_DEPOSIT:
       return {
         ...state,
-        balance: state.balance + payload,
+        balance: state.balance + action.payload,
         transactions: [
           {
             id: String(Math.random()),
             createdAt: new Date(),
-            description: `Deposit ${payload}`,
+            description: `Deposit ${action.payload}`,
           },
           ...state.transactions,
         ],
@@ -43,12 +30,12 @@ const bankReducer = (state: IState = initialState, { type, payload }: IAction) =
     case ActionType.BANK_WITHDRAW:
       return {
         ...state,
-        balance: state.balance - payload,
+        balance: state.balance - action.payload,
         transactions: [
           {
             id: String(Math.random()),
             createdAt: new Date(),
-            description: `Withdraw -${payload}`,
+            description: `Withdraw -${action.payload}`,
           },
           ...state.transactions,
         ],
