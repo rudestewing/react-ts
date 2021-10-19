@@ -1,10 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit'
-import bankReducer from './reducers/bank.reducer'
+import { combineReducers } from 'redux'
+
+import bankSlice from './bank.slice'
+
+const rootReducer = combineReducers({
+  bank: bankSlice.reducer,
+})
 
 export const store = configureStore({
-  reducer: {
-    bank: bankReducer,
-  },
+  reducer: rootReducer,
 })
 
 export type RootState = ReturnType<typeof store.getState>

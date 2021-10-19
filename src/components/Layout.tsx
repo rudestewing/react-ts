@@ -27,9 +27,9 @@ const Layout: React.FC<IProps> = ({ children }) => {
       <div className="max-w-screen-sm mx-auto">
         <div className="bg-blue-300 w-full ">
           <ul className=" flex justify-center items-center">
-            {navs.map((item: INavItem) => {
+            {navs.map((item: INavItem, index: number) => {
               return (
-                <li>
+                <li key={index}>
                   <Link
                     to={item.path}
                     className="px-4 py-2 bg-gray-100 text-gray-900 block hover:bg-blue-600 hover:text-gray-100 font-semibold"

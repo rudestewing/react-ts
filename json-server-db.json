@@ -1,0 +1,11 @@
+{
+  "bank": {
+    "balance": 0,
+    "transactions": []
+  },
+  "profile": {
+    "name": "rudi setiawan",
+    "username": "rudestewing",
+    "email": "rsetiawan@waresix.com"
+  }
+}

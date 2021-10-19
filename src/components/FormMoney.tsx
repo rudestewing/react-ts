@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { AppDispatch, RootState } from '../store'
-import { deposit, withdraw } from '../store/action-creators'
+import { bankAction } from '../store/bank.slice'
 
 const FormMoney: React.FC = () => {
   const { bank } = useSelector((state: RootState) => ({
@@ -12,12 +12,12 @@ const FormMoney: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>()
 
   function handleDeposit() {
-    dispatch(deposit(money))
+    dispatch(bankAction.deposit(money))
     setMoney(0)
   }
 
   function handleWithdraw() {
-    dispatch(withdraw(money))
+    dispatch(bankAction.withdraw(money))
     setMoney(0)
   }
 
