@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { ITransaction } from '../interfaces'
 
 type IState = {
@@ -24,7 +24,7 @@ export const bankSlice = createSlice({
       })
     },
     withdraw: (state: IState, action: PayloadAction<number>) => {
-      state.balance = state.balance + action.payload
+      state.balance = state.balance - action.payload
       state.transactions.unshift({
         id: String(Math.random()),
         createdAt: new Date(),

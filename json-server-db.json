@@ -1,7 +1,7 @@
 {
   "bank": {
-    "balance": 0,
-    "transactions": []
+    "balance": 100,
+    "transaction": []
   },
   "profile": {
     "name": "rudi setiawan",
