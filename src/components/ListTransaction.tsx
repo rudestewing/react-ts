@@ -1,12 +1,10 @@
+import moment from 'moment'
 import React from 'react'
 import { ITransaction } from '../interfaces'
-import { useSelector } from 'react-redux'
-import { RootState } from '../store'
+import useStore from '../store/bank'
 
 const ListTransaction: React.FC = () => {
-  const { bank } = useSelector((state: RootState) => ({
-    bank: state.bank,
-  }))
+  const bank = useStore((state) => state)
 
   return (
     <div className="p-2 border border-gray-300 rounded-md">
@@ -16,9 +14,7 @@ const ListTransaction: React.FC = () => {
             return (
               <li key={index} className="mb-3 rounded-md border border-gray-200 p-3">
                 <div className="">{item.description}</div>
-                <div>
-                  {item.createdAt.toLocaleDateString()} - {item.createdAt.toTimeString()}
-                </div>
+                <div>{moment(item.createdAt).format('YYYY, MMMM DD - HH:mm:ss')}</div>
               </li>
             )
           })

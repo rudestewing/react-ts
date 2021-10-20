@@ -1,11 +1,8 @@
 import React from 'react'
-import { RootState } from '../store'
-import { useSelector } from 'react-redux'
+import useStore from '../store/bank'
 
 const Balance: React.FC = () => {
-  const { bank } = useSelector((state: RootState) => ({
-    bank: state.bank,
-  }))
+  const bank = useStore((state) => state)
 
   return (
     <div className="flex items-center">
