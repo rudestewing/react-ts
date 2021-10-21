@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useLocation } from 'react-router'
 
 type IProps = {
   children: JSX.Element
@@ -22,6 +23,8 @@ const navs: INavItem[] = [
 ]
 
 const Layout: React.FC<IProps> = ({ children }) => {
+  const location = useLocation()
+
   return (
     <div className="min-h-screen">
       <div className="max-w-screen-sm mx-auto">
@@ -32,7 +35,11 @@ const Layout: React.FC<IProps> = ({ children }) => {
                 <li key={index}>
                   <Link
                     to={item.path}
-                    className="px-4 py-2 bg-gray-100 text-gray-900 block hover:bg-blue-600 hover:text-gray-100 font-semibold"
+                    className={`${
+                      location.pathname === item.path
+                        ? 'bg-blue-600 text-gray-100'
+                        : 'bg-gray-100 text-gray-900'
+                    } px-4 py-2  block hover:bg-blue-600 hover:text-gray-100 font-semibold `}
                   >
                     <span>{item.title}</span>
                   </Link>

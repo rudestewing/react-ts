@@ -1,4 +1,4 @@
-import create from 'zustand'
+import create, { SetState } from 'zustand'
 import { persist } from 'zustand/middleware'
 import { ITransaction } from '../interfaces'
 
@@ -12,7 +12,7 @@ type IState = {
 
 const useStore = create<IState>(
   persist(
-    (set) => ({
+    (set: SetState<IState>) => ({
       balance: 0,
       transactions: [],
       deposit(value: number) {

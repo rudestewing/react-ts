@@ -3,8 +3,9 @@ import Balance from '../components/Balance'
 import Layout from '../components/Layout'
 import FormMoney from '../components/FormMoney'
 import ListTransaction from '../components/ListTransaction'
+import { RouteComponentProps } from 'react-router'
 
-const Home: React.FC = () => {
+const Home: React.FC<RouteComponentProps> = () => {
   return (
     <Layout>
       <div className="container mx-auto">
