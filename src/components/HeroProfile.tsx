@@ -16,7 +16,7 @@ const HeroProfile: React.FC<Props> = (props) => {
         <div className="mr-5">
           <Avatar url={data.avatarUrl} />
         </div>
-        <div className="text-gray-800">
+        <div>
           <TextLabelInfo label="Name" value={data.name} />
           <TextLabelInfo label="Username" value={data.username} />
           <TextLabelInfo label="Email" value={data.email} />
