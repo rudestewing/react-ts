@@ -8,6 +8,10 @@ const FormMoney: React.FC = () => {
 
   const [money, setMoney] = useState<number>(0)
 
+  function handleChangeInputValue(e: React.ChangeEvent<HTMLInputElement>) {
+    setMoney(parseInt(e.target.value))
+  }
+
   function handleDeposit() {
     bank.deposit(money)
     setMoney(0)
@@ -25,10 +29,8 @@ const FormMoney: React.FC = () => {
       </label>
       <input
         type="number"
-        name=""
-        id=""
         value={money || ''}
-        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setMoney(parseInt(e.target.value))}
+        onChange={handleChangeInputValue}
         className="rounded-sm border border-gray-300 p-2 mb-3 w-full"
       />
       <div className="flex justify-center mb-3">
