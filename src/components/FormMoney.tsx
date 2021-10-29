@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
+import { BUTTON_TYPE } from '../enums'
 import useStore from '../store/bank'
+import ButtonAction from './ButtonAction'
 
 const FormMoney: React.FC = () => {
   const bank = useStore((state) => state)
@@ -30,19 +32,12 @@ const FormMoney: React.FC = () => {
         className="rounded-sm border border-gray-300 p-2 mb-3 w-full"
       />
       <div className="flex justify-center mb-3">
-        <button
-          className="bg-green-300 text-gray-800 px-4 py-2 rounded-md mr-2"
-          onClick={handleDeposit}
-        >
-          deposit +
-        </button>
-        <button
-          className="bg-red-300 text-gray-800 px-4 py-2 rounded-md"
-          disabled={money > bank.balance}
-          onClick={handleWithdraw}
-        >
-          withdraw -
-        </button>
+        <div className="mr-2">
+          <ButtonAction label="Deposit +" onClick={handleDeposit} type={BUTTON_TYPE.PRIMARY} />
+        </div>
+        <div className="">
+          <ButtonAction label="Withdraw -" onClick={handleWithdraw} type={BUTTON_TYPE.DANGER} />
+        </div>
       </div>
     </div>
   )

@@ -6,12 +6,12 @@ type Props = {
 }
 
 const TextLabelInfo: React.FC<Props> = (props) => {
+  const { value = '-' } = props
+
   return (
     <div className="mb-3">
-      <label htmlFor="" className="block text-gray-600 text-sm">
-        {props.label}
-      </label>
-      <div className="text-gray-900">{props.value}</div>
+      <label className="block text-gray-600 text-sm">{props.label}</label>
+      <div className="text-gray-900">{value}</div>
     </div>
   )
 }
