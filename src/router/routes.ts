@@ -1,13 +1,6 @@
-import React from 'react'
-import { RouteComponentProps } from 'react-router'
+import { IRoute } from '../interfaces'
 import Home from '../pages/Home'
 import Profile from '../pages/Profile'
-
-type IRoute = {
-  path: string
-  exact?: Boolean
-  component: React.FC<RouteComponentProps>
-}
 
 const routes: IRoute[] = [
   {

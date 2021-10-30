@@ -1,9 +1,10 @@
 import React from 'react'
+import { RouteComponentProps } from 'react-router'
 import HeroProfile from '../components/HeroProfile'
 import Layout from '../components/Layout'
 import { IUser } from '../interfaces'
 
-const Profile: React.FC = () => {
+const Profile: React.FC<RouteComponentProps> = () => {
   const dataUser: IUser = {
     id: '931y2o312973017525gk3uy45',
     avatarUrl:

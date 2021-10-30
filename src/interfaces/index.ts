@@ -1,3 +1,12 @@
+import React from 'react'
+import { RouteComponentProps } from 'react-router'
+
+export type IRoute = {
+  path: string
+  exact: boolean
+  component: React.FC<RouteComponentProps>
+}
+
 export type ITransaction = {
   id: string
   createdAt: Date
