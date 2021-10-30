@@ -24,7 +24,7 @@ const FormMoney: React.FC = () => {
 
   return (
     <div className="p-2 border border-gray-300 rounded-md">
-      <label htmlFor="" className="block mb-1">
+      <label htmlFor="" className="block text-gray-600 font-semibold shadow-sm pb-3">
         Input Value
       </label>
       <input
