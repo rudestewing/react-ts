@@ -13,12 +13,16 @@ const FormMoney: React.FC = () => {
   }
 
   function handleDeposit() {
-    bank.deposit(money)
+    if (money > 0) {
+      bank.deposit(money)
+    }
     setMoney(0)
   }
 
   function handleWithdraw() {
-    bank.withdraw(money)
+    if (money > 0) {
+      bank.withdraw(money)
+    }
     setMoney(0)
   }
 
@@ -29,7 +33,7 @@ const FormMoney: React.FC = () => {
       </label>
       <input
         type="number"
-        value={money || ''}
+        value={money > 0 ? money : ''}
         onChange={handleChangeInputValue}
         className="rounded-sm border border-gray-300 p-2 mb-3 w-full"
       />

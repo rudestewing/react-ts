@@ -13,13 +13,13 @@ const ButtonAction: React.FC<IProps> = (props) => {
   const classType = () => {
     switch (type) {
       case BUTTON_TYPE.DEFAULT:
-        return 'bg-white text-gray-800'
+        return 'bg-white text-gray-800 hover:bg-gray-100'
 
       case BUTTON_TYPE.PRIMARY:
-        return 'bg-green-300 text-gray-800'
+        return 'bg-green-300 text-gray-800 hover:bg-green-400'
 
       case BUTTON_TYPE.DANGER:
-        return 'bg-red-300 text-gray-800'
+        return 'bg-red-300 text-gray-800 hover:bg-red-400'
 
       default:
         return ''
