@@ -1,7 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import routes from './routes'
-import { RouteComponentProps } from 'react-router'
 
 const Router: React.FC = () => {
   return (
@@ -13,7 +12,7 @@ const Router: React.FC = () => {
               key={index}
               exact={routeItem.exact}
               path={routeItem.path}
-              render={(props: RouteComponentProps<any>) => {
+              render={(props) => {
                 return <routeItem.component {...props} />
               }}
             />
