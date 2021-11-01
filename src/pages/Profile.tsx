@@ -1,7 +1,6 @@
 import React from 'react'
 import { RouteComponentProps } from 'react-router'
 import HeroProfile from '../components/HeroProfile'
-import JsComponent from '../components/JsComponent'
 import Layout from '../components/Layout'
 import { IUser } from '../interfaces'
 
@@ -32,8 +31,6 @@ const Profile: React.FC<RouteComponentProps> = () => {
     <Layout>
       <div className="container mx-auto py-3">
         <HeroProfile data={dataUser} />
-
-        {/* <JsComponent /> */}
       </div>
     </Layout>
   )
